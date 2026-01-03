@@ -90,7 +90,7 @@ local function createESP(player)
             
             local teamColor = player.Team and player.Team.Color or Color3.fromRGB(200, 200, 200)
             
-            if Menu and Menu.features and Menu.features.name then
+            if _G.Menu and _G.Menu.features and _G.Menu.features.name then
                 nameTag.Text = player.Name
                 nameTag.Position = Vector2.new(left + width / 2, top - 18)
                 nameTag.Color = teamColor
@@ -99,7 +99,7 @@ local function createESP(player)
                 nameTag.Visible = false
             end
             
-            if Menu and Menu.features and Menu.features.box then
+            if _G.Menu and _G.Menu.features and _G.Menu.features.box then
                 box.Color = teamColor
                 box.PointA = Vector2.new(left, top)
                 box.PointB = Vector2.new(right, top)
@@ -110,7 +110,7 @@ local function createESP(player)
                 box.Visible = false
             end
             
-            if Menu and Menu.features and Menu.features.health then
+            if _G.Menu and _G.Menu.features and _G.Menu.features.health then
                 local healthPercent = humanoid.Health / humanoid.MaxHealth
                 local healthColor = Color3.new(1 - healthPercent, healthPercent, 0)
                 

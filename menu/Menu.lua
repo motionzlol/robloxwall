@@ -137,3 +137,5 @@ function Menu:init()
 end
 
 Menu:init()
+
+_G.Menu = Menu
