@@ -7,7 +7,9 @@ local Menu = {}
 Menu.features = {
     box = true,
     name = true,
-    health = true
+    health = true,
+    tracer = true,
+    head = true
 }
 
 local menuState = {
@@ -38,8 +40,8 @@ function Menu:createGUI()
     
     local frame = Instance.new("Frame")
     frame.Name = "MenuFrame"
-    frame.Size = UDim2.new(0, 220, 0, 180)
-    frame.Position = UDim2.new(0.5, -110, 0.5, -90)
+    frame.Size = UDim2.new(0, 220, 0, 240)
+    frame.Position = UDim2.new(0.5, -110, 0.5, -120)
     frame.BackgroundColor3 = colors.bg
     frame.BorderSizePixel = 0
     frame.Visible = false
@@ -104,7 +106,7 @@ function Menu:createGUI()
     content.Parent = frame
     
     local list = Instance.new("UIListLayout")
-    list.Padding = UDim.new(0, 8)
+    list.Padding = UDim.new(0, 6)
     list.SortOrder = Enum.SortOrder.LayoutOrder
     list.Parent = content
     
@@ -186,6 +188,8 @@ function Menu:createGUI()
     createToggle("Box ESP", "box")
     createToggle("Name ESP", "name")
     createToggle("Health Bar", "health")
+    createToggle("Tracer", "tracer")
+    createToggle("Head Circle", "head")
     
     local function onClose()
         self:toggle(false)
@@ -230,10 +234,10 @@ function Menu:toggle(animate)
         menuState.frame.Size = UDim2.new(0, 0, 0, 0)
         if animate ~= false then
             TweenService:Create(menuState.frame, TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-                Size = UDim2.new(0, 220, 0, 180)
+                Size = UDim2.new(0, 220, 0, 240)
             }):Play()
         else
-            menuState.frame.Size = UDim2.new(0, 220, 0, 180)
+            menuState.frame.Size = UDim2.new(0, 220, 0, 240)
         end
     else
         if animate ~= false then
