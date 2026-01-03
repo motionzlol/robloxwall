@@ -1,1 +1,1 @@
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/motionzlol/robloxwall/refs/heads/master/esp/ESP.lua')))())())
+local ok, _ = pcall(function() return loadstring(game:HttpGet("https://raw.githubusercontent.com/motionzlol/robloxwall/refs/heads/master/esp/ESP.lua"))() end)
